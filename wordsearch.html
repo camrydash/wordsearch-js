@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Wordsearch JS</title>
+    <link rel="stylesheet" href="main.css" type="text/css">
+  </head>
+  <body class="page">
+    <div id="container">
+
+      <h1>wordsearch-generator-js</h1>
+      <div>
+      	<textarea id="word-list" rows=10 cols=100 placeholder="enter words separated by new line..."></textarea><br/>
+      	<input type="button" id="create-ws" value="Create" />
+      </div>
+    	
+      <table id="wordsearch-table" cellpadding="5">		
+      </table>
+
+    </div>
+    <!-- Import jquery, this defaults to exporting the variable $ -->
+    <script type="text/javascript" src="jquery.js"></script>
+    <script type="text/javascript" src="wordsearch.js"></script>
+    <script type="text/javascript">
+          $(document).ready(function() {
+
+            $("#create-ws").click(function() {
+                  var word_list = $("#word-list").val().split("\n").map(function(x) { return x.trim(); });
+                  console.log(word_list);
+                  initialize(word_list);
+            });
+
+
+          });
+    </script>
+  </body>
+</html>
